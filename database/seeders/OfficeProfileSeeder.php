@@ -13,8 +13,8 @@ class OfficeProfileSeeder extends Seeder
     public function run(): void
     {
         OfficeProfile::create([
-            'name' => 'PT. Nuryeni ',
-            'email' => 'pt.nuryeni2018@gmail.com',
+            'name' => 'Gen Z Company',
+            'email' => 'genzcompany23@gmail.com',
             'telepon' => '(0264) 88305518',
             'alamat' => 'Jl. Pramuka, Purwakarta, Indonesia',
             'whatsapp' => null,
@@ -24,7 +24,7 @@ class OfficeProfileSeeder extends Seeder
             'youtube' => null,
             'maps' => 'https://goo.gl/maps/TSFRY1FHQkHWhtoK9',
             'logo' => 'file/profilePT/nyn.png',
-            'about' => 'PT. Nuryeni adalah sebuah perusahaan yang bergerak dibidang Waste (LB3) management mulai dari penyewaan alat berat dll',
+            'about' => 'Gen Z Company adalah sebuah perusahaan yang bergerak dibidang Waste (LB3) management mulai dari penyewaan alat berat dll',
             'pengalaman' => '0',
             'anggota' => '0',
             'penilaian' => '0',

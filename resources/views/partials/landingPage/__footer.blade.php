@@ -6,7 +6,7 @@
                 <div
                     class="p-4 text-center d-flex flex-column align-items-center justify-content-center h-100 bg-primary">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>Startup</h1>
+                        <h1 class="m-0 text-white">Gen Z Company</h1>
                     </a>
                     <p class="mt-3 mb-4">
                         {{ $profile->about

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
+use App\Models\Client;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('pages.landingPage.contact');
+        // client
+        $clients = Client::latest()->take('20')->get();
+
+        return view('pages.landingPage.contact', compact('clients'));
     }
 
     /**
@@ -52,7 +56,7 @@ class ContactController extends Controller
             $item = Contact::create($request->all());
 
             //send email
-            $adminEmail = "muhamadazis9a@gmail.com";
+            $adminEmail = "genzcompany23@gmail.com";
             Mail::to($adminEmail)->send(new ContactMail($item));
 
             DB::commit();

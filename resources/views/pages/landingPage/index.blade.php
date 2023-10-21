@@ -41,6 +41,53 @@
     @endif
     <!-- Carousel End -->
 
+    <!-- Facts Start -->
+    <div class="py-5 container-fluid facts pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
+                        style="height: 150px;">
+                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0 text-white">Happy Clients</h5>
+                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="p-4 shadow bg-light d-flex align-items-center justify-content-center"
+                        style="height: 150px;">
+                        <div class="mb-2 rounded bg-primary d-flex align-items-center justify-content-center"
+                            style="width: 60px; height: 60px;">
+                            <i class="text-white fa fa-check"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0 text-primary">Projects Done</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
+                        style="height: 150px;">
+                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-award text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-0 text-white">Win Awards</h5>
+                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts Start -->
 
     <!-- About Start -->
     @if ($about)
@@ -91,56 +138,6 @@
     @endif
     <!-- About End -->
 
-
-    <!-- Facts Start -->
-    <div class="py-5 container-fluid facts pt-lg-0">
-        <div class="container py-5 pt-lg-0">
-            <div class="row gx-0">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-white">Happy Clients</h5>
-                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="p-4 shadow bg-light d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 rounded bg-primary d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="text-white fa fa-check"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-primary">Projects Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-award text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-white">Win Awards</h5>
-                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Facts Start -->
-
-
     <!-- Features Start -->
     @if ($whychoose)
         <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
@@ -152,7 +149,7 @@
                 <div class="row g-5">
                     <div class="col-lg-4">
                         <div class="row g-5">
-                            @foreach ($whychooseDetail as $detail1)
+                            @foreach ($whychooseDetail1 as $detail1)
                                 <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
                                     <div class="mb-3 rounded bg-primary d-flex align-items-center justify-content-center"
                                         style="width: 60px; height: 60px;">
@@ -173,15 +170,15 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="row g-5">
-                            @foreach ($whychooseDetail as $detail2)
-                            <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
-                                <div class="mb-3 rounded bg-primary d-flex align-items-center justify-content-center"
-                                    style="width: 60px; height: 60px;">
-                                    <i class="text-white fa fa-users-cog"></i>
+                            @foreach ($whychooseDetail2 as $detail2)
+                                <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
+                                    <div class="mb-3 rounded bg-primary d-flex align-items-center justify-content-center"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="text-white fa fa-users-cog"></i>
+                                    </div>
+                                    <h4>{{ $detail2->title }}</h4>
+                                    <p class="mb-0">{{ $detail2->description }}</p>
                                 </div>
-                                <h4>{{ $detail2->title }}</h4>
-                                <p class="mb-0">{{ $detail2->description }}</p>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -243,7 +240,7 @@
                             <div
                                 class="text-center rounded service-item bg-light d-flex flex-column align-items-center justify-content-center">
                                 <div class="service-icon">
-                                    <i class="text-white fa fa-{{ $service->icon ? $service->file : 'code' }}-alt"></i>
+                                    <i class="text-white fa fa-{{ $service->icon ? $service->icon : 'code' }}-alt"></i>
                                 </div>
                                 <h4 class="mb-3">{{ $service->title }}</h4>
                                 <p class="m-0">{{ $service->description }}</p>
@@ -261,7 +258,7 @@
 
 
     <!-- Pricing Plan Start -->
-    @if ($price)
+    {{-- @if ($price)
         <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="pb-3 mx-auto mb-5 text-center section-title position-relative" style="max-width: 600px;">
@@ -344,7 +341,7 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
     <!-- Pricing Plan End -->
 
 
@@ -496,7 +493,7 @@
 
 
     {{-- Team Member Start --}}
-    @if ($teams)
+    @if (count($teams) > 0)
         <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="pb-3 mx-auto mb-5 text-center section-title position-relative" style="max-width: 600px;">
@@ -508,7 +505,9 @@
                         <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                             <div class="overflow-hidden rounded team-item bg-light">
                                 <div class="overflow-hidden team-img position-relative">
-                                    <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                                    <img class="img-fluid w-100"
+                                        src="{{ $team->file ? asset($team->file) : asset('assetsLanding/img/team-1.jpg') }}"
+                                        alt="">
                                     <div class="team-social">
                                         @if ($team->twitter)
                                             <a class="rounded btn btn-lg btn-primary btn-lg-square"
@@ -608,4 +607,5 @@
         </div>
     @endif
     {{-- client end --}}
+
 @endsection

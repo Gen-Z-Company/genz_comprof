@@ -5,17 +5,17 @@
                 <img src="{{ $profile->logo ? asset($profile->logo) : asset('logo/nyn.png') }}" alt="nyn"
                     class="app-brand-logo demo" width="75">
             @endif
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">Nuryeni</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">Gen Z</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            <i class="align-middle bx bx-chevron-left bx-sm"></i>
         </a>
     </div>
 
     <div class="menu-inner-shadow"></div>
 
-    <ul class="menu-inner py-1">
+    <ul class="py-1 menu-inner">
         <!-- Dashboard -->
         <li class="menu-item {{ request()->is('admin/dashboard') ? 'active' : '' }} ">
             <a href="/admin/dashboard" class="menu-link">
@@ -56,6 +56,14 @@
             <a href="/admin/about" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-conversation"></i>
                 <div data-i18n="Basic">About</div>
+            </a>
+        </li>
+
+        {{-- Team --}}
+        <li class="menu-item {{ request()->is('admin/team') ? 'open active' : '' }}">
+            <a href="/admin/team" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-group"></i>
+                <div data-i18n="Basic">Team</div>
             </a>
         </li>
 

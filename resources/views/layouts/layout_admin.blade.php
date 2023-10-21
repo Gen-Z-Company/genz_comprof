@@ -16,7 +16,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsLanding/img/logo.png') }}" />
+    <link href="{{ $profile->logo ? $profile->logo : asset('assetsAdmin/img/icons/asana.png') }}" rel="icon">
     {{-- <link rel="shortcut icon" href="{{ asset('assetsLanding/img/logo.png') }}"> --}}
 
     <!-- Fonts -->

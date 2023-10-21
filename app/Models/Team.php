@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+
+    protected $table = 'teams';
+
+    protected $fillable = [
+        'file', 'name', 'job', 'twitter',
+        'facebook', 'instagram', 'linkedin',
+    ];
 }

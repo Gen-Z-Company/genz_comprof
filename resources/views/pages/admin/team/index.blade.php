@@ -1,25 +1,28 @@
 @extends('layouts.layout_admin')
 
 @section('title')
-    Pesan Form Contact
+    Team
 @endsection
 
 @section('content')
-    <h4 class="py-3 mb-4 fw-bold"><span class="text-muted fw-light">Data Pesan Form Contact</h4>
+    <h4 class="py-3 mb-4 fw-bold"><span class="text-muted fw-light">Data Teams</h4>
+
+    <a href="{{ route('admin.team.create') }}" type="button" class="mb-3 btn btn-primary ">
+        <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Add
+    </a>
 
     <div class="card">
-        <h5 class="card-header">Data Pesan Form Contact</h5>
+        <h5 class="card-header">Data Teams</h5>
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered data-table nowrap w-100">
                     <thead>
                         <tr>
                             <th width="5%">No</th>
+                            <th>Picture</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Telepon</th>
-                            <th>Subject</th>
-                            <th>Pesan</th>
+                            <th>Job</th>
                             <th width="10%">Action</th>
                         </tr>
                     </thead>
@@ -50,34 +53,24 @@
             var table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin.contact.index') }}",
+                ajax: "{{ route('admin.team.index') }}",
                 columns: [{
-                        data: 'DT_RowIndex'
-                    }, {
-                        data: 'name',
-                        name: 'name'
-                    }, {
-                        data: 'email',
-                        name: 'email'
-                    }, {
-                        data: 'phone',
-                        name: 'phone'
-                    },
-                    {
-                        data: 'subject',
-                        name: 'subject'
-                    },
-                    {
-                        data: 'message',
-                        name: 'message'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
-                ]
+                    data: 'DT_RowIndex'
+                }, {
+                    data: 'file',
+                    name: 'file'
+                }, {
+                    data: 'name',
+                    name: 'name'
+                }, {
+                    data: 'job',
+                    name: 'job'
+                }, {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                }, ]
             });
 
         });
@@ -85,7 +78,7 @@
         // fun delete
         function hapus(uuid) {
 
-            var url = '{{ route('admin.contact.index') }}/' + uuid;
+            var url = '{{ route('admin.team.index') }}/' + uuid;
             $('#delete-form').attr('action', url);
 
             Swal.fire({

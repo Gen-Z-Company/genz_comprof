@@ -44,19 +44,22 @@ class LandingPageController extends Controller
         // testimonial 4 aja
         $testimonials = Testimoni::latest()->take('4')->get();
 
-        // get 3 data terbaru service
-        $teams = Team::take('3')->get();
+        // get 3 data terbaru teams
+        $teams = Team::latest()->take('3')->get();
 
         // get whychoose
         $whychoose = Whychoose::latest()->first();
 
-        // get detail whychoose
-        $whychooseDetail = whychooseDetail::where('whychoose_id', $whychoose->id)->take('4')->get();
+        // get detail whychoose left
+        $whychooseDetail1 = whychooseDetail::where('whychoose_id', $whychoose->id)->take('2')->get();
+
+        // get detail whychoose right
+        $whychooseDetail2 = whychooseDetail::where('whychoose_id', $whychoose->id)->take('2')->get();
 
         // client
         $clients = Client::latest()->take('20')->get();
 
-        return view('pages.landingPage.index', compact('services', 'price', 'about', 'project', 'carousels', 'testimonials', 'teams', 'whychoose', 'whychooseDetail', 'clients'));
+        return view('pages.landingPage.index', compact('services', 'price', 'about', 'project', 'carousels', 'testimonials', 'teams', 'whychoose', 'whychooseDetail1', 'whychooseDetail2', 'clients'));
     }
 
     /**
@@ -69,7 +72,32 @@ class LandingPageController extends Controller
         // get 3 data terbaru service
         $services = Services::latest()->paginate('6');
 
-        return view('pages.landingPage.service', compact('services'));
+        // testimonial 4 aja
+        $testimonials = Testimoni::latest()->take('4')->get();
+
+        // client
+        $clients = Client::latest()->take('20')->get();
+
+        return view('pages.landingPage.service', compact('services', 'testimonials', 'clients'));
+    }
+
+    /**
+     * about
+     *
+     * @return void
+     */
+    public function about()
+    {
+        // get about
+        $about = About::latest()->first();
+
+        // get 8 data terbaru service
+        $teams = Team::take('8')->get();
+
+        // client
+        $clients = Client::latest()->take('20')->get();
+
+        return view('pages.landingPage.about', compact('about', 'teams', 'clients'));
     }
 
     /**
@@ -114,5 +142,4 @@ class LandingPageController extends Controller
 
         return view('pages.landingPage.berita-detail', compact('berita', 'terbaru'));
     }
-
 }

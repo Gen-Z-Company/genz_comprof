@@ -5,13 +5,13 @@ Create User
 @endsection
 
 @section('content')
-<a href="{{ route('admin.user.index') }}" type="button" class="btn btn-primary mb-3 ">
+<a href="{{ route('admin.user.index') }}" type="button" class="mb-3 btn btn-primary ">
     Kembali
 </a>
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card mb-4">
+        <div class="mb-4 card">
             <h5 class="card-header">Create User</h5>
 
             <hr class="my-0" />
@@ -63,7 +63,6 @@ Create User
                             </div>
                             @enderror
                         </div>
-
                     </div>
                     <div class="mt-2">
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>

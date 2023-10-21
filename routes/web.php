@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisiMisiController;
@@ -55,6 +56,9 @@ Route::prefix('admin')->group(function () {
         //About
         route::resource('/about', AboutController::class, ['as' => 'admin']);
 
+        //About
+        route::resource('/team', TeamController::class, ['as' => 'admin']);
+
         //Project
         route::resource('/project', ProjectController::class, ['as' => 'admin']);
 
@@ -95,6 +99,8 @@ Route::prefix('admin')->group(function () {
 Route::get('/', [LandingPageController::class, 'index'])->name('home.index');
 
 Route::get('/service', [LandingPageController::class, 'service'])->name('home.service');
+
+Route::get('/about', [LandingPageController::class, 'about'])->name('home.about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

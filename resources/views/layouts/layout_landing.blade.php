@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{ $profile->logo ? $profile->logo : asset('assetsAdmin/img/icons/asana.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +23,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('assetsLanding/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assetsLanding/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsLandings/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsLandings/lib/animate/animate.min.css') }}" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('assetsLanding/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsLandings/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{ asset('assetsLanding/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsLandings/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -63,14 +63,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('assetsLanding/lib/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('assetsLanding/lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('assetsLanding/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assetsLanding/lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ asset('assetsLanding/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assetsLandings/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('assetsLandings/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('assetsLandings/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assetsLandings/lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ asset('assetsLandings/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="{{ asset('assetsLanding/js/main.js') }}"></script>
+    <script src="{{ asset('assetsLandings/js/main.js') }}"></script>
 </body>
 
 </html>
