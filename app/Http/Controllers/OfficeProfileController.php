@@ -37,10 +37,9 @@ class OfficeProfileController extends Controller
             'maps' => 'nullable',
             'logo' => 'required|mimes:png,jpg,png|max:2048',
             'about' => 'nullable',
-            'pengalaman' => 'required|numeric',
-            'anggota' => 'required|numeric',
-            'penilaian' => 'required|numeric',
-            'proyek' => 'required|numeric',
+            'clients' => 'required|numeric',
+            'projects' => 'required|numeric',
+            'awards' => 'required|numeric',
         ], [
             'whatsapp.regex' => 'Format no WA tidak valid (10 - 12 digit angka)',
         ]);
@@ -71,10 +70,9 @@ class OfficeProfileController extends Controller
                 'maps' => $request->maps,
                 'about' => $request->about,
                 'logo' => $logo,
-                'pengalaman' => $request->pengalaman,
-                'anggota' => $request->anggota,
-                'penilaian' => $request->penilaian,
-                'proyek' => $request->proyek,
+                'clients' => $request->clients,
+                'projects' => $request->projects,
+                'awards' => $request->awards,
             ]);
 
             //redirect
@@ -103,10 +101,9 @@ class OfficeProfileController extends Controller
             'maps' => 'nullable',
             'logo' => 'nullable|mimes:png,jpg,png|max:2048',
             'about' => 'nullable',
-            'pengalaman' => 'required|numeric',
-            'anggota' => 'required|numeric',
-            'penilaian' => 'required|numeric',
-            'proyek' => 'required|numeric',
+            'clients' => 'required|numeric',
+            'projects' => 'required|numeric',
+            'awards' => 'required|numeric',
         ], [
             'whatsapp.regex' => 'Format no WA tidak valid (10 - 12 digit angka)',
         ]);
@@ -145,10 +142,9 @@ class OfficeProfileController extends Controller
 
                 'logo' => $logo,
 
-                'pengalaman' => $request->pengalaman,
-                'anggota' => $request->anggota,
-                'penilaian' => $request->penilaian,
-                'proyek' => $request->proyek,
+                'clients' => $request->clients,
+                'projects' => $request->projects,
+                'awards' => $request->awards,
             ]);
 
             //redirect

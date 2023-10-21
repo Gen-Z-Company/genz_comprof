@@ -42,51 +42,54 @@
     <!-- Carousel End -->
 
     <!-- Facts Start -->
-    <div class="py-5 container-fluid facts pt-lg-0">
-        <div class="container py-5 pt-lg-0">
-            <div class="row gx-0">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-white">Happy Clients</h5>
-                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="p-4 shadow bg-light d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 rounded bg-primary d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="text-white fa fa-check"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-primary">Projects Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+    @if ($profile)
+        <div class="py-5 container-fluid facts pt-lg-0">
+            <div class="container py-5 pt-lg-0">
+                <div class="row gx-0">
+                    <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
+                            style="height: 150px;">
+                            <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-users text-primary"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="mb-0 text-white">Happy Clients</h5>
+                                <h1 class="mb-0 text-white" data-toggle="counter-up">{{ $profile->clients }}</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
-                        style="height: 150px;">
-                        <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-award text-primary"></i>
+                    <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="p-4 shadow bg-light d-flex align-items-center justify-content-center"
+                            style="height: 150px;">
+                            <div class="mb-2 rounded bg-primary d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
+                                <i class="text-white fa fa-check"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="mb-0 text-primary">Projects Done</h5>
+                                <h1 class="mb-0" data-toggle="counter-up">{{ $profile->projects }}</h1>
+                            </div>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-0 text-white">Win Awards</h5>
-                            <h1 class="mb-0 text-white" data-toggle="counter-up">12345</h1>
+                    </div>
+                    <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="p-4 shadow bg-primary d-flex align-items-center justify-content-center"
+                            style="height: 150px;">
+                            <div class="mb-2 bg-white rounded d-flex align-items-center justify-content-center"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-award text-primary"></i>
+                            </div>
+                            <div class="ps-4">
+                                <h5 class="mb-0 text-white">Win Awards</h5>
+                                <h1 class="mb-0 text-white" data-toggle="counter-up">{{ $profile->awards }}</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
+
     <!-- Facts Start -->
 
     <!-- About Start -->

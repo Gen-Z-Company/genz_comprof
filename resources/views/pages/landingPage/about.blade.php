@@ -80,7 +80,7 @@
                         <div class="col-lg-3 wow slideInUp" data-wow-delay="0.3s">
                             <div class="overflow-hidden rounded team-item bg-light">
                                 <div class="overflow-hidden team-img position-relative">
-                                    <img class="img-fluid w-100" src="{{ $team->file ? asset($team->file) : asset('assetsLanding/img/team-1.jpg') }}" alt="">
+                                    <img class="img-fluid w-100" src="{{ $team->file ? asset($team->file) : asset('assetsLandings/img/team-1.jpg') }}" alt="">
                                     <div class="team-social">
                                         @if ($team->twitter)
                                             <a class="rounded btn btn-lg btn-primary btn-lg-square"
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="py-4 text-center">
                                     <h4 class="text-primary">{{ $team->name }}</h4>
-                                    <p class="m-0 text-uppercase">{{ $team->position }}</p>
+                                    <p class="m-0 text-uppercase">{{ $team->job }}</p>
                                 </div>
                             </div>
                         </div>

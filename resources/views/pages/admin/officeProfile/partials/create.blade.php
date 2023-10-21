@@ -1,26 +1,26 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="card mb-4">
+        <div class="mb-4 card">
             <h5 class="card-header">Profile PT</h5>
             <div class="card-body">
                 <form action="{{ route('admin.office-profile.store') }}" id="formAccountSettings" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 
-                    <div class="d-flex align-items-start align-items-sm-center gap-4 mb-3">
+                    <div class="gap-4 mb-3 d-flex align-items-start align-items-sm-center">
                         <img src="{{ asset('assetsLanding/img/placeholder.jpg') }}" alt="user-avatar"
-                            class="d-block rounded" height="100" width="100" id="uploadedAvatar"
+                            class="rounded d-block" height="100" width="100" id="uploadedAvatar"
                             style="object-fit: cover" />
 
                         <div class="button-wrapper">
                             <label class="form-label">Logo PT</label>
-                            <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror"
-                                value="{{ old('logo') }}">
-                            <p class="text-muted mb-0">Allowed png, jpg, png Max size of 2048K</p>
+                            <input type="file" name="logo"
+                                class="form-control @error('logo') is-invalid @enderror" value="{{ old('logo') }}">
+                            <p class="mb-0 text-muted">Allowed png, jpg, png Max size of 2048K</p>
                             @error('logo')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
                     </div>
@@ -28,46 +28,49 @@
                     <div class="row">
                         <div class="mb-3 col-md-4">
                             <label for="firstName" class="form-label">Nama PT</label>
-                            <input class="form-control  @error('name') is-invalid @enderror" type="text" id="firstName"
-                                name="name" value="{{ old('name') }}" placeholder="Masukana nama PT" autofocus />
+                            <input class="form-control  @error('name') is-invalid @enderror" type="text"
+                                id="firstName" name="name" value="{{ old('name') }}" placeholder="Masukana nama PT"
+                                autofocus />
                             @error('name')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-4">
                             <label for="email" class="form-label">E-mail</label>
-                            <input class="form-control  @error('email') is-invalid @enderror" type="email" id="email"
-                                name="email" value="{{ old('email') }}" placeholder="Masukan email PT" />
+                            <input class="form-control  @error('email') is-invalid @enderror" type="email"
+                                id="email" name="email" value="{{ old('email') }}"
+                                placeholder="Masukan email PT" />
                             @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-4">
                             <label for="telepon" class="form-label">Telepon</label>
-                            <input class="form-control  @error('telepon') is-invalid @enderror" type="text" id="telepon"
-                                name="telepon" value="{{ old('telepon') }}" placeholder="Masukan Telepon" autofocus />
+                            <input class="form-control  @error('telepon') is-invalid @enderror" type="text"
+                                id="telepon" name="telepon" value="{{ old('telepon') }}" placeholder="Masukan Telepon"
+                                autofocus />
                             @error('telepon')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label for="whatsapp" class="form-label">Whatsapp</label>
                             <input class="form-control @error('whatsapp') is-invalid @enderror" type="text"
-                                id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}" placeholder="Masukan No WA"
-                                autofocus />
+                                id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}"
+                                placeholder="Masukan No WA" autofocus />
                             @error('whatsapp')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -77,9 +80,9 @@
                                 id="instagram" name="instagram" value="{{ old('instagram') }}"
                                 placeholder="Masukan link instagram" autofocus />
                             @error('instagram')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -89,9 +92,9 @@
                                 id="facebook" name="facebook" value="{{ old('facebook') }}"
                                 placeholder="Masukan link facebook" autofocus />
                             @error('facebook')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -101,84 +104,73 @@
                                 id="linkedin" name="linkedin" value="{{ old('linkedin') }}"
                                 placeholder="Masukan link Linkedin" autofocus />
                             @error('linkedin')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label for="youtube" class="form-label">Youtube</label>
-                            <input class="form-control @error('youtube') is-invalid @enderror" type="text" id="youtube"
-                                name="youtube" value="{{ old('youtube') }}" placeholder="Masukan link Youtube"
-                                autofocus />
+                            <input class="form-control @error('youtube') is-invalid @enderror" type="text"
+                                id="youtube" name="youtube" value="{{ old('youtube') }}"
+                                placeholder="Masukan link Youtube" autofocus />
                             @error('youtube')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label for="maps" class="form-label">Link Google Maps</label>
-                            <input class="form-control @error('maps') is-invalid @enderror" type="text" id="maps"
-                                name="maps" value="{{ old('maps') }}"
+                            <input class="form-control @error('maps') is-invalid @enderror" type="text"
+                                id="maps" name="maps" value="{{ old('maps') }}"
                                 placeholder="Contoh Link Maps : https://goo.gl/maps/TSFRY1FHQkHWhtoK9" autofocus />
                             @error('maps')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         {{-- START PENILAIAN --}}
                         <div class="mb-3 col-md-6">
-                            <label for="pengalaman" class="form-label">Tahun Pengalaman</label>
-                            <input class="form-control @error('pengalaman') is-invalid @enderror" type="text"
-                                id="pengalaman" name="pengalaman" value="{{ old('pengalaman') }}"
-                                placeholder="Masukan Berapa tahun pengalaman PT" autofocus />
-                            @error('pengalaman')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <label for="clients" class="form-label">Happy Clients</label>
+                            <input class="form-control @error('clients') is-invalid @enderror" type="text"
+                                id="clients" name="clients" value="{{ old('clients') }}"
+                                placeholder="Masukan total pelanggan" autofocus />
+                            @error('clients')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-6">
-                            <label for="penilaian" class="form-label">Total Penilaian Positif</label>
-                            <input class="form-control @error('penilaian') is-invalid @enderror" type="text"
-                                id="penilaian" name="penilaian" value="{{ old('penilaian') }}"
-                                placeholder="Masukan total penilaian" autofocus />
-                            @error('penilaian')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <label for="projects" class="form-label">Projects Done</label>
+                            <input class="form-control @error('projects') is-invalid @enderror" type="text"
+                                id="projects" name="projects" value="{{ old('projects') }}"
+                                placeholder="Masukan total projects selesai" autofocus />
+                            @error('projects')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
                         <div class="mb-3 col-md-6">
-                            <label for="proyek" class="form-label">Total Proyek Terselesaikan</label>
-                            <input class="form-control @error('proyek') is-invalid @enderror" type="text" id="proyek"
-                                name="proyek" value="{{ old('proyek') }}" placeholder="Masukan total proyek selesai"
-                                autofocus />
-                            @error('proyek')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <label for="awards" class="form-label">Awards Win</label>
+                            <input class="form-control @error('awards') is-invalid @enderror" type="text"
+                                id="awards" name="awards" value="{{ old('awards') }}"
+                                placeholder="Masukan total penghargaan yang didapat" autofocus />
+                            @error('awards')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
-                        <div class="mb-3 col-md-6">
-                            <label for="anggota" class="form-label">Total Anggota/Karyawan</label>
-                            <input class="form-control @error('anggota') is-invalid @enderror" type="text" id="anggota"
-                                name="anggota" value="{{ old('anggota') }}" placeholder="Masukan total Anggota"
-                                autofocus />
-                            @error('anggota')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
                         {{-- END PENILAIAN --}}
 
                         <div class="mb-3 col-md-6">
@@ -186,9 +178,9 @@
                             <textarea name="about" id="about" cols="0" rows="2"
                                 class="form-control @error('about') is-invalid @enderror">{{ old('about') }}</textarea>
                             @error('about')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -197,9 +189,9 @@
                             <textarea name="alamat" id="alamat" cols="0" rows="2"
                                 class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
                             @error('alamat')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 

@@ -79,7 +79,7 @@ class TeamController extends Controller
             'instagram' => 'nullable',
             'facebook' => 'nullable',
             'linkedin' => 'nullable',
-            'file' => 'required|mimes:png,jpg,png|max:2048',
+            'file' => 'nullable|mimes:png,jpg,png|max:2048',
         ]);
 
         try {

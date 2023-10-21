@@ -28,10 +28,9 @@ return new class extends Migration
             $table->text('logo')->nullable();
             $table->text('about')->nullable();
 
-            $table->text('pengalaman')->nullable();
-            $table->text('anggota')->nullable();
-            $table->text('penilaian')->nullable();
-            $table->text('proyek')->nullable();
+            $table->text('clients')->nullable();
+            $table->text('projects')->nullable();
+            $table->text('awards')->nullable();
 
             $table->timestamps();
         });
