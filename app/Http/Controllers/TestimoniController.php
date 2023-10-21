@@ -16,6 +16,9 @@ class TestimoniController extends Controller
 
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->editColumn('name', function ($row) {
+                    return '<p class="white-space">' . $row->name . '</p>';
+                })
                 ->editColumn('description', function ($row) {
                     return '<p class="white-space">' . $row->description . '</p>';
                 })
@@ -37,7 +40,7 @@ class TestimoniController extends Controller
                     ';
                     return $btn;
                 })
-                ->rawColumns(['action', 'file', 'description'])
+                ->rawColumns(['name', 'action', 'file', 'description'])
                 ->make(true);
         }
         return view('pages.admin.testimoni.index');

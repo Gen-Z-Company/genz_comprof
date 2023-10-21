@@ -14,5 +14,6 @@ class VisiMisi extends Model
     protected $fillable = [
         'visi',
         'misi',
+        'file'
     ];
 }

@@ -18,7 +18,7 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- About Start -->
+    <!--About Start -->
     @if ($about)
         <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5">
@@ -65,7 +65,40 @@
             </div>
         </div>
     @endif
-    <!-- About End -->
+    <!--About End -->
+
+    <!--Visi & Misi Start -->
+    @if ($visiMisi)
+        <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="rounded position-absolute w-100 h-100 wow zoomIn" data-wow-delay="0.9s"
+                                src="{{ asset($visiMisi->file ? $visiMisi->file : 'assetsLandings/img/about.jpg') }}"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="pb-3 mb-5 section-title position-relative">
+                            <h5 class="fw-bold text-primary text-uppercase">Vision & Missions</h5>
+                            <h1 class="mb-0">Vision</h1>
+                        </div>
+                        <p class="mb-4">
+                            {{ $visiMisi->visi }}
+                        </p>
+                        <div class="pb-3 mb-5 section-title position-relative">
+                            <h1 class="mb-0">Missions</h1>
+                        </div>
+                        <p class="mb-4">
+                            {{ $visiMisi->misi }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+    <!--Visi & Misi End -->
 
     {{-- Team Member Start --}}
     @if (count($teams) > 0)

@@ -91,13 +91,16 @@ class LandingPageController extends Controller
         // get about
         $about = About::latest()->first();
 
+        // get about
+        $visiMisi = VisiMisi::first();
+
         // get 8 data terbaru service
         $teams = Team::take('8')->get();
 
         // client
         $clients = Client::latest()->take('20')->get();
 
-        return view('pages.landingPage.about', compact('about', 'teams', 'clients'));
+        return view('pages.landingPage.about', compact('about', 'teams', 'clients', 'visiMisi'));
     }
 
     /**

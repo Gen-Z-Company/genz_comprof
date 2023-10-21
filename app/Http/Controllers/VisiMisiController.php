@@ -17,16 +17,20 @@ class VisiMisiController extends Controller
             // white-space
             return DataTables::of($data)
                 ->addIndexColumn()
-                ->editColumn('title', function ($row) {
-                    return '<p class="white-space">' . $row->title . '</p>';
+                ->editColumn('visi', function ($row) {
+                    return '<p class="white-space">' . $row->visi . '</p>';
                 })
-                ->editColumn('description', function ($row) {
-                    return '<p class="white-space">' . $row->description . '</p>';
+                ->editColumn('misi', function ($row) {
+                    return '<p class="white-space">' . $row->misi . '</p>';
+                })
+                ->addColumn('file', function ($row) {
+                    $image = '<img src="' . asset($row->file) . '" width="50px">';
+                    return $image;
                 })
                 ->addColumn('action', function ($row) {
                     $btn = '
                     <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <button type="button" class="p-0 btn dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
@@ -37,7 +41,7 @@ class VisiMisiController extends Controller
                     ';
                     return $btn;
                 })
-                ->rawColumns(['action', 'title', 'description', 'file'])
+                ->rawColumns(['action', 'visi', 'misi', 'file'])
                 ->make(true);
         }
 
@@ -53,13 +57,26 @@ class VisiMisiController extends Controller
     {
         $request->validate([
             'visi' => 'required|max:255',
-            'misi' => 'required|max:255',
+            'misi' => 'required|max:1000',
+            'file' => 'nullable|mimes:png,jpg,png|max:2048'
         ]);
 
         try {
+            // jika upload file
+            $file = $request->file('file');
+            if (file_exists($file)) {
+                $nama_file = time() . "-" . $file->getClientOriginalName();
+                $namaFolder2 = 'file/visimisi';
+                $file->move($namaFolder2, $nama_file);
+                $pathPublic = $namaFolder2 . "/" . $nama_file;
+            } else {
+                $pathPublic = null;
+            }
+
             VisiMisi::create([
                 'visi' => $request->visi,
                 'misi' => $request->misi,
+                'file' => $pathPublic
             ]);
             return redirect()->route('admin.visimisi.index')->with('success', 'Visi Misi created successfully');
         } catch (\Throwable $e) {
@@ -78,13 +95,32 @@ class VisiMisiController extends Controller
     {
         $request->validate([
             'visi' => 'required|max:255',
-            'misi' => 'required|max:255',
+            'misi' => 'required|max:1000',
+            'file' => 'nullable|mimes:png,jpg,png|max:2048',
         ]);
 
         try {
+            // jika upload file
+            $file = $request->file('file');
+            if (file_exists($file)) {
+
+                //create
+                $nama_file = time() . "-" . $file->getClientOriginalName();
+                $namaFolder2 = 'file/visimisi';
+                $file->move($namaFolder2, $nama_file);
+                $pathPublic2 = $namaFolder2 . "/" . $nama_file;
+
+                // delete
+                File::delete($id->file);
+
+            } else {
+                $pathPublic2 = $id->file;
+            }
+
             VisiMisi::where("id", $id)->update([
                 'visi' => $request->visi,
                 'misi' => $request->misi,
+                'file' => $pathPublic2
             ]);
             return redirect()->route('admin.visimisi.index')->with('success', 'Visi Misi updated successfully');
         } catch (\Throwable $e) {
