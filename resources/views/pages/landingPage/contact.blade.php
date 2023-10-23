@@ -1,7 +1,7 @@
 @extends('layouts.layout_landing')
 
 @section('title')
-    Nuryeni | Solution To All Your Problems
+    Gen Z Company | Solution To All Your Problems
 @endsection
 
 @section('content')

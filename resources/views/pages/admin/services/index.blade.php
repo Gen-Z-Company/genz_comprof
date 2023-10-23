@@ -22,7 +22,7 @@
                             <th width="5%">No</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Picture</th>
+                            <th>Icon</th>
                             <th width="10%">Action</th>
                         </tr>
                     </thead>
@@ -63,8 +63,8 @@
                         data: 'description',
                         name: 'description'
                     }, {
-                        data: 'file',
-                        name: 'file',
+                        data: 'icon',
+                        name: 'icon',
                         orderable: false,
                         searchable: false
                     },{

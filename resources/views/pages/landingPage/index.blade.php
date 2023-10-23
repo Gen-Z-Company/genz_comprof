@@ -9,11 +9,10 @@
     @if ($carousels)
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-
                 @foreach ($carousels as $index => $carousels)
                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                         <img class="w-100"
-                            src="{{ $carousels->file ? asset($carousels->file) : asset('assetsLanding/img/carousel-1.jpg') }}"
+                            src="{{ asset($carousels->file ? $carousels->file : 'assetsLandings/img/carousel-1.jpg') }}"
                             alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
@@ -27,7 +26,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -243,7 +241,7 @@
                             <div
                                 class="text-center rounded service-item bg-light d-flex flex-column align-items-center justify-content-center">
                                 <div class="service-icon">
-                                    <i class="text-white fa fa-{{ $service->icon ? $service->icon : 'code' }}-alt"></i>
+                                    <i class="text-white fa fa-{{ $service->icon ? $service->icon : 'code' }}"></i>
                                 </div>
                                 <h4 class="mb-3">{{ $service->title }}</h4>
                                 <p class="m-0">{{ $service->description }}</p>

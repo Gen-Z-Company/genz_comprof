@@ -20,43 +20,6 @@
 
     <!-- Service Start -->
     @if (count($services) > 0)
-        {{-- <div class="py-5 container-xxl" id="service">
-            <div class="container">
-                <div class="pb-4 mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <p class="mb-2 fw-medium text-uppercase text-primary">Our Services</p>
-                    <h1 class="mb-4 display-5">Kami Memberikan Pelayanan Terbaik</h1>
-                </div>
-                <div class="row gy-5 gx-4">
-
-                    @foreach ($services as $service)
-                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="service-item">
-                                <img class="img-fluid service-img-cover"
-                                    src="{{ $service->file ? asset($service->file) : asset('assetsLanding/img/placeholder.jpg') }}"
-                                    alt="service">
-                                <div class="service-img">
-                                    <img class="img-fluid"
-                                        src="{{ $service->file ? asset($service->file) : asset('assetsLanding/img/placeholder.jpg') }}"
-                                        alt="service">
-                                </div>
-                                <div class="service-detail">
-                                    <div class="service-title">
-                                        <hr class="w-25">
-                                        <h3 class="mb-0">{{ $service->title }}</h3>
-                                        <hr class="w-25">
-                                    </div>
-                                    <div class="service-text">
-                                        <p class="mb-0 text-white">{{ $service->description }}</p>
-                                    </div>
-                                </div>
-                                <a class="btn btn-light" href="">Read More</a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div> --}}
-
         <div class="py-5 container-fluid wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="pb-3 mx-auto mb-5 text-center section-title position-relative" style="max-width: 600px;">
@@ -69,7 +32,7 @@
                             <div
                                 class="text-center rounded service-item bg-light d-flex flex-column align-items-center justify-content-center">
                                 <div class="service-icon">
-                                    <i class="text-white fa fa-{{ $service->icon ? $service->icon : 'code' }}-alt"></i>
+                                    <i class="text-white fa fa-{{ $service->icon ? $service->icon : 'code' }}"></i>
                                 </div>
                                 <h4 class="mb-3">{{ $service->title }}</h4>
                                 <p class="m-0">{{ $service->description }}</p>

@@ -16,12 +16,14 @@ class ServicesController extends Controller
 
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->editColumn('title', function ($row) {
+                    return '<p class="white-space">' . $row->title . '</p>';
+                })
                 ->editColumn('description', function ($row) {
                     return '<p class="white-space">' . $row->description . '</p>';
                 })
-                ->addColumn('file', function ($row) {
-                    $image = '<img src="' . asset($row->file) . '" width="50px">';
-                    return $image;
+                ->editColumn('icon', function ($row) {
+                    return '<p class="white-space">' . $row->icon . '</p>';
                 })
                 ->addColumn('action', function ($row) {
                     $btn = '
@@ -37,7 +39,7 @@ class ServicesController extends Controller
                     ';
                     return $btn;
                 })
-                ->rawColumns(['action', 'file', 'description'])
+                ->rawColumns(['action', 'icon', 'description', 'title'])
                 ->make(true);
         }
         return view('pages.admin.services.index');
@@ -53,25 +55,14 @@ class ServicesController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|max:255',
-            'file' => 'required',
+            'icon' => 'required',
         ]);
 
         try {
-            // create user
-            $file = $request->file('file');
-            if (file_exists($file)) {
-                $nama_file = time() . "-" . $file->getClientOriginalName();
-                $namaFolder2 = 'file/services';
-                $file->move($namaFolder2, $nama_file);
-                $pathPublic = $namaFolder2 . "/" . $nama_file;
-            } else {
-                $pathPublic = null;
-            }
-
             $service = Services::create([
                 'title' => $request->title,
                 'description' => $request->description,
-                'file' => $pathPublic,
+                'icon' => $request->icon,
             ]);
 
             //echo $service;
@@ -95,29 +86,15 @@ class ServicesController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|max:255',
-            'file' => '',
+            'icon' => 'required',
         ]);
 
         try {
-            //check passwordy
-            $file = $request->file('file');
-            //echo $file;
-            if (file_exists($file)) {
-                $nama_file = time() . "-" . $file->getClientOriginalName();
-                $namaFolder2 = 'file/services';
-                $file->move($namaFolder2, $nama_file);
-                $pathPublic2 = $namaFolder2 . "/" . $nama_file;
-                $data = Services::where('id', $id)->first();
-                File::delete($data->file);
-                echo $pathPublic2;
-            } else {
-                $pathPublic2 = $request->pathFile;
-            }
             //update user with password
             $services = Services::where("id", $id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
-                'file' => $pathPublic2,
+                'icon' => $request->icon,
             ]);
 
             //echo $services;

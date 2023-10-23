@@ -22,9 +22,9 @@ Edit Testimonial
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label for="firstName" class="form-label">Name</label>
-                            <input class="form-control  @error('nama') is-invalid @enderror" type="text" id="firstName"
-                                name="nama" value="{{ old('nama', $testimoni->nama) }}" autofocus />
-                            @error('nama')
+                            <input class="form-control  @error('name') is-invalid @enderror" type="text" id="firstName"
+                                name="name" value="{{ old('name', $testimoni->name) }}" autofocus />
+                            @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

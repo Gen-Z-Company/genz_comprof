@@ -42,17 +42,15 @@ Edit Services
                             @enderror
                         </div>
                         <div class="mb-3 col-md-12">
-                            <label for="" class="form-label">Upload Foto</label>
-                            <input class="form-control" type="file" id="formFile" name="file" value="{{ old('file') }}"/>
-                            <input type="text" name="pathFile" value="{{ $services->file }}" hidden>
-                            {{-- <input type="file" name="file"> --}}
-                            @error('file')
+                            <label for="" class="form-label">Icon</label>
+                            <input class="form-control  @error('icon') is-invalid @enderror" type="text" id="firstName"
+                                name="icon" value="{{ old('icon', $services->icon) }}" placeholder="Enter code icon Font Awesome, Example : 'code', 'shield-alt', 'handshake'" autofocus />
+                            @error('icon')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
-
                     </div>
                     <div class="mt-2">
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>

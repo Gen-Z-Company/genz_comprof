@@ -50,11 +50,17 @@ class LandingPageController extends Controller
         // get whychoose
         $whychoose = Whychoose::latest()->first();
 
-        // get detail whychoose left
-        $whychooseDetail1 = whychooseDetail::where('whychoose_id', $whychoose->id)->take('2')->get();
+        // get detail whychoose left (2 data pertama)
+        $whychooseDetail1 = WhychooseDetail::where('whychoose_id', $whychoose->id)
+            ->orderBy('id', 'asc') // Mengurutkan data berdasarkan id secara ascending (terkecil ke terbesar)
+            ->limit(2) // Mengambil 2 data pertama
+            ->get();
 
-        // get detail whychoose right
-        $whychooseDetail2 = whychooseDetail::where('whychoose_id', $whychoose->id)->take('2')->get();
+        // get detail whychoose right (2 data terakhir)
+        $whychooseDetail2 = WhychooseDetail::where('whychoose_id', $whychoose->id)
+            ->orderBy('id', 'desc') // Mengurutkan data berdasarkan id secara descending (terbesar ke terkecil)
+            ->limit(2) // Mengambil 2 data terakhir
+            ->get();
 
         // client
         $clients = Client::latest()->take('20')->get();
