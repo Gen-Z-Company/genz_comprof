@@ -75,8 +75,6 @@
                                     class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                             <a class="mb-2 text-light" href="/service"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                            <a class="mb-2 text-light" href="/team"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
                             <a class="text-light" href="/contact"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                         </div>
